@@ -18,7 +18,7 @@
             <td>{{ auto.type }}</td>
             <td>{{ auto.prijs| number_format(0,'','.') }}</td>
             <td class="link"><a href="{{ path('app_details', {id:auto.id}) }}">deails</a></td>
-            <td class="link"><a href="#">update</a></td>
+            <td class="link"><a href="{{ path('app_update', {id:auto.id}) }}">update</a></td>
             <td class="link"><a href="#">delete</a></td>
         </tr>
         {% endfor %}
