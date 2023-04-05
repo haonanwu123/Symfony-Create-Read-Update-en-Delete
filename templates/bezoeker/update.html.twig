@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block update %}
+    <div class="row form-page">
+        <div class="col-3"></div>
+        <div class="col-6">
+            {{ form_start(form) }}
+            <div class="row">
+                {{ form_row(form.model) }}
+            </div>
+            <div class="row">
+                {{ form_row(form.type) }}
+            </div>
+            <div class="row">
+                {{ form_row(form.kleur) }}
+            </div>
+            <div class="row">
+                {{ form_row(form.gewicht) }}
+            </div>
+            <div class="row">
+                {{ form_row(form.prijs) }}
+            </div>
+            <div class="row">
+                {{ form_row(form.voorraad) }}
+            </div>
+            {{ form_end(form) }}
+        </div>
+        <div class="col-3"></div>
+    </div>
+{% endblock %}

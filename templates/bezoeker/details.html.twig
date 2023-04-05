@@ -1,1 +1,63 @@
 {% extends 'base.html.twig' %}
+
+{% block details %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Gewicht(kg)</th>
+            <th scope="col">belasting(euro)</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>>500</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>>750</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>>1000</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>>1500</td>
+                <td>60</td>
+            </tr>
+        </tbody>
+    </table>
+    {% if gewicht > 500 and gewicht <= 750 %}
+    <P>U moet 18 euro voor belasting te betalen.</P>
+    {% elseif gewicht > 750 and gewicht <=1000 %}
+    <P>U moet 22 euro voor belasting te betalen.</P>
+    {% elseif gewicht > 1000 and gewicht <=1500 %}
+    <P>U moet 40 euro voor belasting te betalen.</P>
+    {% elseif gewicht > 1500 %}
+    <P>U moet 60 euro voor belasting te betalen.</P>
+    {% else %}
+    <P>U hoeft niet te betalen.</P>
+    {% endif %}
+
+    <style>
+        .table th {
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        .table th:nth-child(2) {
+            border-right: 1px solid black;
+        }
+
+        .table td {
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        .table td {
+            border-right: 1px solid black;
+        }
+    </style>
+{% endblock %}

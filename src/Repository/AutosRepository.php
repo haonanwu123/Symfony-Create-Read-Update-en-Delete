@@ -21,7 +21,7 @@ class AutosRepository extends ServiceEntityRepository
         parent::__construct($registry, Autos::class);
     }
 
-    public function save(Autos $entity, bool $flush = false): void
+    public function save(Autos $entity, bool $flush = true): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class AutosRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Autos $entity, bool $flush = false): void
+    public function remove(Autos $entity, bool $flush = true): void
     {
         $this->getEntityManager()->remove($entity);
 

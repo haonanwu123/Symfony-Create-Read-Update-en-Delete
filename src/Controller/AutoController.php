@@ -19,11 +19,17 @@ class AutoController extends AbstractController
     }
 
     #[route('/details/{id}', name:'app_details')]
-    public function details(ManagerRegistry $doctrine): Response
+    public function details(Autos $gewicht): Response
     {
-        $gewicht = $doctrine->getRepository(Autos::class)->getGewicht();
+        $autoGewicht = $gewicht->getGewicht();
         return $this->render('bezoeker/details.html.twig',[
-            'gewicht'=>$gewicht
+            'gewicht'=>$autoGewicht
         ]);
+    }
+
+    #[Route('/update/{id}', name:'app_update')]
+    public function update(): Response
+    {
+        return $this->render('bezoeker/update.html.twig');
     }
 }
