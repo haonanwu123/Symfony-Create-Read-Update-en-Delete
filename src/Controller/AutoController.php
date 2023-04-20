@@ -14,7 +14,7 @@ use Doctrine\Persistence\ManagerRegistry;
 
 class AutoController extends AbstractController
 {
-    #[Route('/home', name:'app_home')]
+    #[Route('/', name:'app_home')]
     public function home(ManagerRegistry $doctrine): Response
     {
         $autos = $doctrine->getRepository(Autos::class)->findAll();
